@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ parent() }} | Create a new record {% endblock %}  {# to add to the block we use the {{ parent() }} #}
+
+{%  block body %}
+<h1>{{ title}} </h1>
+{#to comment #}
+<div>
+
+    New sweet tracklist
+    <ul>
+        {# for simple array #}
+        {% for track2 in tracks2 %}
+            <li>
+                {{ track2 }}
+            </li>
+        {% endfor %}
+
+        <h3> for assoc array</h3>
+        {#  for assoc array#}
+
+        {% for track in tracks %}
+            <li>
+                {{ track.song }} - {{ track.artist | upper}}
+            </li>
+        {% endfor %}
+
+
+    </ul>
+
+</div>
+
+{%  endblock %}
